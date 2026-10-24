@@ -50,6 +50,30 @@ function App() {
           </div>
         </div>
       </section>
+      {/* Footer Section */}
+      <footer className="footer-section">
+        <div className="footer-content">
+          <div className="footer-logo">
+            <h2>GLASS</h2>
+            <p>Bringing life to your indoor spaces.</p>
+          </div>
+          <div className="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>Privacy Policy</li>
+              <li>Terms of Service</li>
+              <li>FAQs</li>
+            </ul>
+          </div>
+          <div className="footer-social">
+            <h4>Follow Us</h4>
+            <p>Instagram | Facebook | Twitter</p>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2026 GreenLeaf - Organic Plant Store. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   )
 }
