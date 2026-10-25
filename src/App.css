@@ -217,4 +217,24 @@ body {
     flex-direction: column; /* Stack footer content vertically */
     text-align: center;
   }
+  /* New Page Sections (About, Contact) */
+.page-section {
+  padding: 100px 50px;
+  text-align: center;
+  min-height: 50vh; /* Keeps the footer pushed to the bottom */
+}
+
+.page-section h2 {
+  font-size: 3rem;
+  color: #3ea055;
+  margin-bottom: 20px;
+}
+
+.page-section p {
+  font-size: 1.2rem;
+  color: #a0aab2;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
 }
