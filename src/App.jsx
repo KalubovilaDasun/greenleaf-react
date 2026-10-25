@@ -11,11 +11,11 @@ function App() {
   /* Plant Data Array */
   const plantsData = [
     { id: 1, name: 'Ficus Lyrata', price: 25, img: '/zz-plant.jpg' },
-    { id: 2, name: 'Monstera Deliciosa', price: 35, img: '/monstera.jpg' },
+    { id: 2, name: 'Monstera Deliciosa', price: 35, img: '/monny-plant.jpg' },
     { id: 3, name: 'Snake Plant', price: 20, img: '/snake-plant.jpg' },
     { id: 4, name: 'Areca Palm', price: 40, img: '/areca-palm.jpg' },
     { id: 5, name: 'Rubber Plant', price: 30, img: '/rubber-plant.jpg' },
-    { id: 6, name: 'ZZ Plant', price: 22, img: '/zz-plant.jpg' }
+    { id: 6, name: 'ZZ Plant', price: 22, img: '/z-plant.jpg' }
   ];
 
   /* Function to add item to cart */
@@ -36,9 +36,11 @@ function App() {
           <li onClick={() => setCurrentPage('home')}>Home</li>
           <li onClick={() => setCurrentPage('about')}>About</li>
           <li onClick={() => setCurrentPage('contact')}>Contact</li>
-          <li onClick={() => setCurrentPage('cart')} className="cart-link">
+          <div className="nav-action">
+          <button className="cart-top-btn" onClick={() => setCurrentPage('cart')}>
             Cart ({cart.length})
-          </li>
+          </button>
+        </div>
         </ul>
       </nav>
 
@@ -48,12 +50,24 @@ function App() {
           <header className="hero-section">
             <div className="hero-content">
               <h1>Top Selling<br/>Plants</h1>
-              <p>Bring Nature Indoors. Discover the best organic plants.</p>
-              <button className="shop-btn" onClick={() => setCurrentPage('cart')}>View Cart</button>
+              <p>Bring Nature Indoors. Discover the best<br/>organic plants for your space.</p>
+              
+              <button className="hero-shop-btn" onClick={() => setCurrentPage('cart')}>
+                <span className="arrow-circle">&lt;</span>
+                Shop Now
+                <span className="arrow-circle">&gt;</span>
+              </button>
+
+              <div className="hero-socials">
+                <p>Trusted by thousands</p>
+                <div className="stars">
+                  ★ ★ ★ ★ ★ <span className="twitter-icon">🐦</span>
+                </div>
+              </div>
             </div>
             <div className="hero-image-container">
               {/* Main large plant image for the hero section */}
-              <img src="https://images.unsplash.com/photo-1597211684565-dca64d72bdce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hero Plant" className="hero-img" />
+              <img src="/hero-plant.jpg" alt="Hero Plant" className="hero-img" />
             </div>
           </header>
              {/* Product Grid Section */}
