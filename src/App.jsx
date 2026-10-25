@@ -10,9 +10,12 @@ function App() {
 
   /* Plant Data Array */
   const plantsData = [
-    { id: 1, name: 'Ficus Lyrata', price: 25, img: 'https://images.unsplash.com/photo-1604762524889-3e20cb234479?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-    { id: 2, name: 'Monstera Deliciosa', price: 35, img: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-    { id: 3, name: 'Snake Plant', price: 20, img: 'https://images.unsplash.com/photo-1599598425947-3300262b7ae3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' }
+    { id: 1, name: 'Ficus Lyrata', price: 25, img: '/zz-plant.jpg' },
+    { id: 2, name: 'Monstera Deliciosa', price: 35, img: '/monstera.jpg' },
+    { id: 3, name: 'Snake Plant', price: 20, img: '/snake-plant.jpg' },
+    { id: 4, name: 'Areca Palm', price: 40, img: '/areca-palm.jpg' },
+    { id: 5, name: 'Rubber Plant', price: 30, img: '/rubber-plant.jpg' },
+    { id: 6, name: 'ZZ Plant', price: 22, img: '/zz-plant.jpg' }
   ];
 
   /* Function to add item to cart */
@@ -23,17 +26,16 @@ function App() {
 
   /* Calculate total price */
   const cartTotal = cart.reduce((total, item) => total + item.price, 0);
-
+  
   return (
     <div className="app-container">
-      {/* Navbar Section */}
+ {/* Navbar Section */}
       <nav className="navbar">
         <h2 className="logo" onClick={() => setCurrentPage('home')}>GLASS</h2>
         <ul className="nav-links">
           <li onClick={() => setCurrentPage('home')}>Home</li>
           <li onClick={() => setCurrentPage('about')}>About</li>
           <li onClick={() => setCurrentPage('contact')}>Contact</li>
-          {/* Cart Icon in Navbar */}
           <li onClick={() => setCurrentPage('cart')} className="cart-link">
             Cart ({cart.length})
           </li>
@@ -49,21 +51,26 @@ function App() {
               <p>Bring Nature Indoors. Discover the best organic plants.</p>
               <button className="shop-btn" onClick={() => setCurrentPage('cart')}>View Cart</button>
             </div>
+            <div className="hero-image-container">
+              {/* Main large plant image for the hero section */}
+              <img src="https://images.unsplash.com/photo-1597211684565-dca64d72bdce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hero Plant" className="hero-img" />
+            </div>
           </header>
-
+             {/* Product Grid Section */}
           <section className="products-section">
             <h2>Indoor Plants</h2>
             <p className="section-subtitle">Choose your favorite plants to decorate your space.</p>
             
             <div className="product-grid">
-              {/* Dynamically rendering plants from the array */}
               {plantsData.map((plant) => (
                 <div className="product-card" key={plant.id}>
                   <img src={plant.img} alt={plant.name} />
-                  <h3>{plant.name}</h3>
-                  <p className="price">${plant.price}.00</p>
+                  <div className="product-info">
+                    <h3>{plant.name}</h3>
+                    <p className="price">${plant.price}.00</p>
+                  </div>
                   <button className="add-cart-btn" onClick={() => addToCart(plant)}>
-                    Add to Cart
+                    + Add to Cart
                   </button>
                 </div>
               ))}
