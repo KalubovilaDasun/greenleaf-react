@@ -1,56 +1,78 @@
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 
 function App() {
+  /* State to track the current page */
+  const [currentPage, setCurrentPage] = useState('home');
+  
+  /* State to track shopping cart items */
+  const [cart, setCart] = useState([]);
+
+  /* Plant Data Array */
+  const plantsData = [
+    { id: 1, name: 'Ficus Lyrata', price: 25, img: 'https://images.unsplash.com/photo-1604762524889-3e20cb234479?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
+    { id: 2, name: 'Monstera Deliciosa', price: 35, img: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
+    { id: 3, name: 'Snake Plant', price: 20, img: 'https://images.unsplash.com/photo-1599598425947-3300262b7ae3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' }
+  ];
+
+  /* Function to add item to cart */
+  const addToCart = (plant) => {
+    setCart([...cart, plant]);
+    alert(plant.name + " added to your cart!");
+  };
+
+  /* Calculate total price */
+  const cartTotal = cart.reduce((total, item) => total + item.price, 0);
+
   return (
     <div className="app-container">
-      {/* Navbar Section*/}
+      {/* Navbar Section */}
       <nav className="navbar">
-        <h2 className="logo">GLASS</h2>
+        <h2 className="logo" onClick={() => setCurrentPage('home')}>GLASS</h2>
         <ul className="nav-links">
-          <li>Home</li>
-          <li>Plants</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li onClick={() => setCurrentPage('home')}>Home</li>
+          <li onClick={() => setCurrentPage('about')}>About</li>
+          <li onClick={() => setCurrentPage('contact')}>Contact</li>
+          {/* Cart Icon in Navbar */}
+          <li onClick={() => setCurrentPage('cart')} className="cart-link">
+            Cart ({cart.length})
+          </li>
         </ul>
       </nav>
 
-      {/* Hero Section */}
-      <header className="hero-section">
-        <div className="hero-content">
-          <h1>Top Selling<br/>Plants</h1>
-          <p>Bring Nature Indoors. Discover the best organic plants.</p>
-          <button className="shop-btn">Shop Now</button>
-        </div>
-      </header>
-      {/* Product Grid Section */}
-      <section className="products-section">
-        <h2>Indoor Plants</h2>
-        <p className="section-subtitle">Choose your favorite plants to decorate your space.</p>
-        
-        <div className="product-grid">
-          {/* First Plant */}
-          <div className="product-card">
-            <img src="https://images.unsplash.com/photo-1604762524889-3e20cb234479?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Ficus Lyrata" />
-            <h3>Ficus Lyrata</h3>
-            <p className="price">$25.00</p>
-          </div>
-          
-          {/* Second Plant */}
-          <div className="product-card">
-            <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Monstera" />
-            <h3>Monstera Deliciosa</h3>
-            <p className="price">$35.00</p>
-          </div>
-          
-          {/* Third Plant */}
-          <div className="product-card">
-            <img src="https://images.unsplash.com/photo-1599598425947-3300262b7ae3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Snake Plant" />
-            <h3>Snake Plant</h3>
-            <p className="price">$20.00</p>
-          </div>
-        </div>
-      </section>
-      {/* Conditionally Render About Page */}
+      {/* Home Page Content */}
+      {currentPage === 'home' && (
+        <>
+          <header className="hero-section">
+            <div className="hero-content">
+              <h1>Top Selling<br/>Plants</h1>
+              <p>Bring Nature Indoors. Discover the best organic plants.</p>
+              <button className="shop-btn" onClick={() => setCurrentPage('cart')}>View Cart</button>
+            </div>
+          </header>
+
+          <section className="products-section">
+            <h2>Indoor Plants</h2>
+            <p className="section-subtitle">Choose your favorite plants to decorate your space.</p>
+            
+            <div className="product-grid">
+              {/* Dynamically rendering plants from the array */}
+              {plantsData.map((plant) => (
+                <div className="product-card" key={plant.id}>
+                  <img src={plant.img} alt={plant.name} />
+                  <h3>{plant.name}</h3>
+                  <p className="price">${plant.price}.00</p>
+                  <button className="add-cart-btn" onClick={() => addToCart(plant)}>
+                    Add to Cart
+                  </button>
+                </div>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* About Page */}
       {currentPage === 'about' && (
         <section className="page-section">
           <h2>About Us</h2>
@@ -58,7 +80,7 @@ function App() {
         </section>
       )}
 
-      {/* Conditionally Render Contact Page */}
+      {/* Contact Page */}
       {currentPage === 'contact' && (
         <section className="page-section">
           <h2>Contact Us</h2>
@@ -67,6 +89,30 @@ function App() {
           <p>Location: 123 Green Street, Plant City</p>
         </section>
       )}
+
+      {/* Shopping Cart Page */}
+      {currentPage === 'cart' && (
+        <section className="page-section cart-section">
+          <h2>Your Shopping Cart</h2>
+          {cart.length === 0 ? (
+            <p>Your cart is currently empty.</p>
+          ) : (
+            <div className="cart-container">
+              {cart.map((item, index) => (
+                <div className="cart-item" key={index}>
+                  <h4>{item.name}</h4>
+                  <p>${item.price}.00</p>
+                </div>
+              ))}
+              <div className="cart-total">
+                <h3>Total: ${cartTotal}.00</h3>
+                <button className="shop-btn">Checkout</button>
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+
       {/* Footer Section */}
       <footer className="footer-section">
         <div className="footer-content">
@@ -92,7 +138,7 @@ function App() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
