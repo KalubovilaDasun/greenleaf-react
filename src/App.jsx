@@ -50,6 +50,23 @@ function App() {
           </div>
         </div>
       </section>
+      {/* Conditionally Render About Page */}
+      {currentPage === 'about' && (
+        <section className="page-section">
+          <h2>About Us</h2>
+          <p>Welcome to GreenLeaf. We are passionate about bringing the beauty of nature into your home with our premium organic plants.</p>
+        </section>
+      )}
+
+      {/* Conditionally Render Contact Page */}
+      {currentPage === 'contact' && (
+        <section className="page-section">
+          <h2>Contact Us</h2>
+          <p>Email: info@greenleaf.com</p>
+          <p>Phone: +1 234 567 890</p>
+          <p>Location: 123 Green Street, Plant City</p>
+        </section>
+      )}
       {/* Footer Section */}
       <footer className="footer-section">
         <div className="footer-content">
