@@ -69,20 +69,45 @@ body {
   color: #a0aab2;
 }
 
-.shop-btn {
-  background-color: #3ea055;
+/* Hero Button and Socials Styles */
+.hero-shop-btn {
+  background: linear-gradient(90deg, #1b6938, #3ae466, #1b6938);
   color: white;
   border: none;
-  padding: 15px 35px;
-  border-radius: 25px;
+  padding: 12px 30px;
+  border-radius: 30px;
   font-size: 1.1rem;
   cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
   margin-top: 30px;
-  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(58, 228, 102, 0.2);
+  transition: transform 0.3s;
 }
 
-.shop-btn:hover {
-  background-color: #2b7a3d;
+.hero-shop-btn:hover {
+  transform: scale(1.05);
+}
+
+.hero-socials {
+  margin-top: 40px;
+}
+
+.hero-socials p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #a0aab2;
+}
+
+.stars {
+  color: #ffffff;
+  letter-spacing: 3px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* --- Benefits Section Styles --- */
@@ -169,6 +194,24 @@ body {
   font-size: 1.3rem;
   color: #3ea055;
   font-weight: bold;
+}
+.add-cart-btn {
+  width: 100%;
+  background-color: transparent;
+  color: #3ea055;
+  border: 1px solid #3ea055;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.add-cart-btn:hover {
+  background-color: #3ea055;
+  color: #07130c;
+  transform: scale(1.05);
 }
 /* Footer Section Styles */
 .footer-section {
