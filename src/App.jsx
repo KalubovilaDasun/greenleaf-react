@@ -70,6 +70,30 @@ function App() {
               <img src="/hero-plant.jpg" alt="Hero Plant" className="hero-img" />
             </div>
           </header>
+          {/* Benefits / Services Section */}
+          <section className="benefits-section">
+            <div className="benefit-item">
+              <span className="benefit-icon">🚚</span>
+              <div>
+                <h4>Free Delivery</h4>
+                <p>For orders over $50</p>
+              </div>
+            </div>
+            <div className="benefit-item">
+              <span className="benefit-icon">🌿</span>
+              <div>
+                <h4>100% Organic</h4>
+                <p>Guaranteed quality</p>
+              </div>
+            </div>
+            <div className="benefit-item">
+              <span className="benefit-icon">🎧</span>
+              <div>
+                <h4>24/7 Support</h4>
+                <p>Always here for you</p>
+              </div>
+            </div>
+          </section>
              {/* Product Grid Section */}
           <section className="products-section">
             <h2>Indoor Plants</h2>
