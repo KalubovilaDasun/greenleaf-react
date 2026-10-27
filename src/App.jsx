@@ -37,10 +37,10 @@ function App() {
           <li onClick={() => setCurrentPage('about')}>About</li>
           <li onClick={() => setCurrentPage('contact')}>Contact</li>
           <div className="nav-action">
-          <button className="cart-top-btn" onClick={() => setCurrentPage('cart')}>
-            Cart ({cart.length})
-          </button>
-        </div>
+            <button className="cart-btn" onClick={() => setCurrentPage('cart')}>
+              Cart ({cart.length})
+            </button>
+          </div>
         </ul>
       </nav>
 

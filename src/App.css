@@ -16,7 +16,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  /* Glassmorphism Effect */
   background: rgba(10, 28, 18, 0.7); 
   backdrop-filter: blur(15px); 
   -webkit-backdrop-filter: blur(15px);
@@ -24,6 +23,27 @@ body {
   position: sticky; 
   top: 0;
   z-index: 1000;
+}
+/* Cart Button in Navbar */
+.cart-btn {
+  background-color: rgba(62, 160, 85, 0.15);
+  color: #3ea055;
+  border: 1px solid #3ea055;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-btn:hover {
+  background-color: #3ea055;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(62, 160, 85, 0.4);
+  transform: translateY(-2px);
 }
 
 .logo {
@@ -172,7 +192,7 @@ body {
   gap: 30px;
 }
 
-/* Slightly lighter green than background for the cards with Glass effect */
+/* Glass Effect for Product Cards */
 .product-card {
   background: rgba(255, 255, 255, 0.03); 
   backdrop-filter: blur(10px);
@@ -185,13 +205,13 @@ body {
   opacity: 0; 
 }
 
-/* Hover lift animation for glass card */
 .product-card:hover {
   transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.06); 
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(62, 160, 85, 0.3); 
 }
+
 .product-card img {
   width: 100%;
   height: 350px;
@@ -210,6 +230,7 @@ body {
   color: #3ea055;
   font-weight: bold;
 }
+
 .add-cart-btn {
   width: 100%;
   background-color: transparent;
@@ -228,6 +249,61 @@ body {
   color: #07130c;
   transform: scale(1.05);
 }
+
+/* --- Testimonials Section Styles --- */
+.testimonials-section {
+  padding: 80px 50px;
+  background-color: #0a1c12;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+.testimonial-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  background-color: #122c1b;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 350px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.stars-review {
+  color: #3ea055;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: #a0aab2;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.customer-name {
+  font-weight: bold;
+  color: #ffffff;
+}
+
 /* Footer Section Styles */
 .footer-section {
   background-color: #07130c; 
@@ -290,10 +366,9 @@ body {
   color: #a0aab2;
   font-size: 0.9rem;
 }
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-
-
   .nav-links {
     gap: 15px;
     font-size: 0.9rem;
@@ -301,11 +376,12 @@ body {
 
   .hero-section {
     padding: 50px 20px;
-    text-align: center; /* Center align text */
+    text-align: center; 
+    flex-direction: column;
   }
 
   .hero-content h1 {
-    font-size: 2.8rem; /* Reduce font size for mobile */
+    font-size: 2.8rem; 
   }
 
   .products-section {
@@ -313,7 +389,7 @@ body {
   }
 
   .product-grid {
-    grid-template-columns: 1fr; /* Display product cards in a single column */
+    grid-template-columns: 1fr; 
   }
 
   .footer-section {
@@ -321,15 +397,16 @@ body {
   }
 
   .footer-content {
-    flex-direction: column; /* Stack footer content vertically */
+    flex-direction: column; 
     text-align: center;
   }
 }
-  /* New Page Sections (About, Contact) */
+
+/* New Page Sections (About, Contact) */
 .page-section {
   padding: 100px 50px;
   text-align: center;
-  min-height: 50vh; /* Keeps the footer pushed to the bottom */
+  min-height: 50vh; 
 }
 
 .page-section h2 {
@@ -346,8 +423,6 @@ body {
 }
 
 /* --- NEW CSS FOR ANIMATIONS --- */
-
-/* Define the fade-in-up animation */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -359,21 +434,16 @@ body {
   }
 }
 
-/* Apply animation to Hero Text */
 .hero-content {
   animation: fadeInUp 1s ease-out forwards;
 }
 
-/* Apply animation to Hero Image with a slight delay */
 .hero-img {
   animation: fadeInUp 1s ease-out 0.3s forwards;
-  opacity: 0; /* Hides the image until the animation starts */
-}
-
-/* Apply animation to Product Cards with more delay */
-.product-card {
-  animation: fadeInUp 1s ease-out 0.5s forwards;
   opacity: 0; 
 }
 
+.product-card {
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  opacity: 0; 
 }
