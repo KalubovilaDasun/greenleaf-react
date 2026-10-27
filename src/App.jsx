@@ -31,11 +31,11 @@ function App() {
     <div className="app-container">
  {/* Navbar Section */}
       <nav className="navbar">
-        <h2 className="logo" onClick={() => setCurrentPage('home')}>GLASS</h2>
+        <h2 className="logo" onClick={() => setCurrentPage('home')}>GreenLeaf</h2>
         <ul className="nav-links">
-          <li onClick={() => setCurrentPage('home')}>Home</li>
-          <li onClick={() => setCurrentPage('about')}>About</li>
-          <li onClick={() => setCurrentPage('contact')}>Contact</li>
+          <li onClick={() => { setCurrentPage('home'); setTimeout(() => document.getElementById('home').scrollIntoView({ behavior: 'smooth' }), 100); }}>Home</li>
+          <li onClick={() => { setCurrentPage('home'); setTimeout(() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' }), 100); }}>About</li>
+          <li onClick={() => { setCurrentPage('home'); setTimeout(() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }), 100); }}>Contact</li>
           <div className="nav-action">
             <button className="cart-btn" onClick={() => setCurrentPage('cart')}>
               Cart ({cart.length})
@@ -47,7 +47,7 @@ function App() {
       {/* Home Page Content */}
       {currentPage === 'home' && (
         <>
-          <header className="hero-section">
+          <header id = "home" className="hero-section">
             <div className="hero-content">
               <h1>Top Selling<br/>Plants</h1>
               <p>Bring Nature Indoors. Discover the best<br/>organic plants for your space.</p>
@@ -114,25 +114,47 @@ function App() {
               ))}
             </div>
           </section>
+
+          {/* --- Testimonials Section --- */}
+          <section className="testimonials-section">
+            <h2>What Our Customers Say</h2>
+            <div className="testimonial-grid">
+              <div className="testimonial-card">
+                <div className="stars-review">★★★★★</div>
+                <p className="testimonial-text">"Absolutely love the Monsteras I bought! They arrived perfectly healthy and carefully packaged."</p>
+                <p className="customer-name">- Sarah Jenkins</p>
+              </div>
+              <div className="testimonial-card">
+                <div className="stars-review">★★★★★</div>
+                <p className="testimonial-text">"The best online plant shop I've ever used. The free delivery was fast."</p>
+                <p className="customer-name">- David Mark</p>
+              </div>
+              <div className="testimonial-card">
+                <div className="stars-review">★★★★★</div>
+                <p className="testimonial-text">"Great customer service! They answered all my questions. I will definitely order more."</p>
+                <p className="customer-name">- Emily R.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* --- About Section --- */}
+          <section id="about" className="page-section">
+            <h2>About GreenLeaf</h2>
+            <p>We are passionate about bringing nature indoors. All our organic plants are carefully nurtured to bring life, beauty, and fresh air to your personal spaces.</p>
+            <p>Our mission is to create greener homes with premium quality, sustainable plant care.</p>
+          </section>
+
+          {/* --- Contact Section --- */}
+          <section id="contact" className="page-section">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Get in touch for any plant care tips or order inquiries.</p>
+            <br />
+            <p><strong>Email:</strong> hello@glassplants.com</p>
+            <p><strong>Phone:</strong> +94 77 123 4567</p>
+            <p><strong>Address:</strong> 123 Green Way, Colombo, Sri Lanka</p>
+          </section>
+
         </>
-      )}
-
-      {/* About Page */}
-      {currentPage === 'about' && (
-        <section className="page-section">
-          <h2>About Us</h2>
-          <p>Welcome to GreenLeaf. We are passionate about bringing the beauty of nature into your home with our premium organic plants.</p>
-        </section>
-      )}
-
-      {/* Contact Page */}
-      {currentPage === 'contact' && (
-        <section className="page-section">
-          <h2>Contact Us</h2>
-          <p>Email: info@greenleaf.com</p>
-          <p>Phone: +1 234 567 890</p>
-          <p>Location: 123 Green Street, Plant City</p>
-        </section>
       )}
 
       {/* Shopping Cart Page */}
@@ -162,7 +184,7 @@ function App() {
       <footer className="footer-section">
         <div className="footer-content">
           <div className="footer-logo">
-            <h2>GLASS</h2>
+            <h2>GreenLeaf</h2>
             <p>Bringing life to your indoor spaces.</p>
           </div>
           <div className="footer-links">
