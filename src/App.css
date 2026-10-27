@@ -540,6 +540,36 @@ body {
     justify-content: center;
   }
 }
+/* --- Contact Section Glass Design --- */
+.contact-glass-section {
+  padding: 80px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  position: relative;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.contact-info strong {
+  color: #3ea055;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .contact-info p {
+    font-size: 1rem;
+  }
+}
 
 /* --- NEW CSS FOR ANIMATIONS --- */
 @keyframes fadeInUp {

@@ -161,14 +161,26 @@ function App() {
             </div>
           </section>
 
-          {/* --- Contact Section --- */}
-          <section id="contact" className="page-section">
-            <h2>Contact Us</h2>
-            <p>We'd love to hear from you! Get in touch for any plant care tips or order inquiries.</p>
-            <br />
-            <p><strong>Email:</strong> hello@glassplants.com</p>
-            <p><strong>Phone:</strong> +94 77 123 4567</p>
-            <p><strong>Address:</strong> 123 Green Way, Colombo, Sri Lanka</p>
+          {/* --- Contact Section (Glass Design) --- */}
+          <section id="contact" className="contact-glass-section">
+            <div className="glass-card-container">
+              <div className="glass-content">
+                <span className="glass-subtitle">GET IN TOUCH</span>
+                <h2 className="glass-title">Contact Us</h2>
+                <p className="glass-description">
+                  We'd love to hear from you! Get in touch for any plant care tips or order inquiries.
+                </p>
+                <div className="contact-info">
+                  <p><strong>Email:</strong> hello@greenleaf.com</p>
+                  <p><strong>Phone:</strong> +94 77 123 4567</p>
+                  <p><strong>Address:</strong> 123 Green Way, Colombo, Sri Lanka</p>
+                </div>
+              </div>
+              <div className="glass-image-wrapper">
+             
+                <img src="/transcription2.png" alt="Contact Us" className="glass-plant-img" />
+              </div>
+            </div>
           </section>
 
         </>
