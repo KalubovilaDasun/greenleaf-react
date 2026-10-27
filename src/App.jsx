@@ -137,11 +137,28 @@ function App() {
             </div>
           </section>
 
-          {/* --- About Section --- */}
-          <section id="about" className="page-section">
-            <h2>About GreenLeaf</h2>
-            <p>We are passionate about bringing nature indoors. All our organic plants are carefully nurtured to bring life, beauty, and fresh air to your personal spaces.</p>
-            <p>Our mission is to create greener homes with premium quality, sustainable plant care.</p>
+        {/* --- About Section (Glass Design) --- */}
+          <section id="about" className="about-glass-section">
+            <div className="glass-card-container">
+              <div className="glass-image-wrapper">
+                {/* Transparent PNG */}
+                <img src="/transcription.png" alt="Dracaena Plant" className="glass-plant-img" />
+              </div>
+              <div className="glass-content">
+                <span className="glass-subtitle">ABOUT LIFE AND PLANTS</span>
+                <h2 className="glass-title">Enjoy<br/>Nature</h2>
+                <h3 className="glass-subheading">Dracaena Plant</h3>
+                <p className="glass-description">
+                  Dracaena is a popular houseplant known for its air-purifying qualities. It thrives in low to moderate light and is easy to care for, making it perfect for home and office.
+                </p>
+                <div className="glass-tags">
+                  <span className="glass-tag">Connect with nature</span>
+                  <span className="glass-tag active">plant care</span>
+                  <span className="glass-tag">plant care</span>
+                  <span className="glass-tag">Gallery</span>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* --- Contact Section --- */}

@@ -421,6 +421,125 @@ body {
   line-height: 1.8;
   margin-bottom: 10px;
 }
+/* --- About Section Glass Design --- */
+.about-glass-section {
+  padding: 80px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  position: relative;
+ 
+}
+
+.glass-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 50px;
+  max-width: 1000px;
+  width: 100%;
+  gap: 50px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.glass-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.glass-plant-img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+  transition: transform 0.4s ease;
+}
+
+.glass-plant-img:hover {
+  transform: scale(1.05);
+}
+
+.glass-content {
+  flex: 1.2;
+  text-align: left;
+}
+
+.glass-subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  color: #a0aab2;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.glass-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.glass-subheading {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.glass-description {
+  font-size: 1rem;
+  color: #a0aab2;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.glass-tags {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.glass-tag {
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glass-tag:hover, .glass-tag.active {
+  background: #ffffff;
+  color: #0a1c12;
+  border-color: #ffffff;
+}
+
+/* Mobile adjustments for Glass About */
+@media (max-width: 768px) {
+  .glass-card-container {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+  }
+  .glass-content {
+    text-align: center;
+  }
+  .glass-title {
+    font-size: 2.8rem;
+  }
+  .glass-tags {
+    justify-content: center;
+  }
+}
 
 /* --- NEW CSS FOR ANIMATIONS --- */
 @keyframes fadeInUp {
