@@ -16,6 +16,14 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
+  /* Glassmorphism Effect */
+  background: rgba(10, 28, 18, 0.7); 
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -164,19 +172,26 @@ body {
   gap: 30px;
 }
 
-/* Slightly lighter green than background for the cards */
+/* Slightly lighter green than background for the cards with Glass effect */
 .product-card {
-  background-color: #122c1b; 
+  background: rgba(255, 255, 255, 0.03); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 20px;
   border-radius: 15px;
-  transition: transform 0.3s ease; 
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  opacity: 0; 
 }
 
-/* Hover lift animation */
+/* Hover lift animation for glass card */
 .product-card:hover {
   transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.06); 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(62, 160, 85, 0.3); 
 }
-
 .product-card img {
   width: 100%;
   height: 350px;
