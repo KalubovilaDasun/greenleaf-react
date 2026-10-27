@@ -47,27 +47,28 @@ function App() {
       {/* Home Page Content */}
       {currentPage === 'home' && (
         <>
-          <header id = "home" className="hero-section">
-            <div className="hero-content">
-              <h1>Top Selling<br/>Plants</h1>
-              <p>Bring Nature Indoors. Discover the best<br/>organic plants for your space.</p>
-              
-              <button className="hero-shop-btn" onClick={() => setCurrentPage('cart')}>
-                <span className="arrow-circle">&lt;</span>
-                Shop Now
-                <span className="arrow-circle">&gt;</span>
-              </button>
+          <header id="home" className="hero-section">
+            <div className="glass-card-container">
+              <div className="hero-content">
+                <h1>Top Selling<br/>Plants</h1>
+                <p>Bring Nature Indoors. Discover the best<br/>organic plants for your space.</p>
+                
+                <button className="hero-shop-btn" onClick={() => setCurrentPage('cart')}>
+                  <span className="arrow-circle">&lt;</span>
+                  Shop Now
+                  <span className="arrow-circle">&gt;</span>
+                </button>
 
-              <div className="hero-socials">
-                <p>Trusted by thousands</p>
-                <div className="stars">
-                  ★ ★ ★ ★ ★ <span className="twitter-icon">🐦</span>
+                <div className="hero-socials">
+                  <p>Trusted by thousands</p>
+                  <div className="stars">
+                    ★ ★ ★ ★ ★ <span className="twitter-icon">🐦</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="hero-image-container">
-              {/* Main large plant image for the hero section */}
-              <img src="/hero-plant.jpg" alt="Hero Plant" className="hero-img" />
+              <div className="hero-image-container">
+                <img src="/hero-plant1.png" alt="Hero Plant" className="hero-img" />
+              </div>
             </div>
           </header>
           {/* Benefits / Services Section */}
